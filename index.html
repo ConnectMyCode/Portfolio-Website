@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aryan Ingle – Java Backend Developer</title>
+  <meta name="description" content="Portfolio of Aryan Ingle, Java Backend Developer (Spring Boot, REST APIs, AWS, Docker). Open to Software Engineer Intern and full-time roles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f4f6f5;--surface:#ffffff;--ink:#14201e;--muted:#566663;--line:#d5dddb;--accent:#0b6b5f;--accent-soft:#dcefeb;--now:#c2570c;--now-soft:#fbe9db;
+      box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1716;--surface:#172321;--ink:#e8f0ee;--muted:#9bb0ac;--line:#2a3a37;--accent:#4fd1bd;--accent-soft:#16332e;--now:#f59e5b;--now-soft:#3a2415;color-scheme:dark}}
+    :root[data-theme="dark"]{--bg:#0f1716;--surface:#172321;--ink:#e8f0ee;--muted:#9bb0ac;--line:#2a3a37;--accent:#4fd1bd;--accent-soft:#16332e;--now:#f59e5b;--now-soft:#3a2415;color-scheme:dark}
+    html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;font-size:1.02rem}
+    a{color:var(--accent)}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+    .wrap{max-width:880px;margin:0 auto;padding:0 1.25rem}
+    header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+    header.nav .wrap{display:flex;gap:1.25rem;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem;overflow-x:auto}
+    .nav b{font-weight:800;white-space:nowrap}
+    .nav nav{display:flex;gap:1rem;white-space:nowrap}
+    .nav nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+    .nav nav a:hover{color:var(--accent)}
+    .hero{padding:4.5rem 0 3rem}
+    .hero h1{font-size:clamp(2.6rem,9vw,4.8rem);line-height:1;margin:0 0 .6rem;font-weight:800;letter-spacing:-.03em}
+    .hero .role{font-size:clamp(1.15rem,3.4vw,1.5rem);color:var(--accent);font-weight:600;margin:0 0 1.2rem}
+    .hero p.lead{max-width:60ch;color:var(--muted);margin:0 0 1.4rem}
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.5rem;padding:0;list-style:none}
+    .badges li{border:1px solid var(--line);background:var(--surface);padding:.3rem .8rem;border-radius:99px;font-size:.9rem}
+    .badges li.ok{background:var(--accent-soft);border-color:var(--accent);font-weight:600}
+    .cta{display:flex;flex-wrap:wrap;gap:.7rem}
+    .btn{display:inline-block;padding:.65rem 1.2rem;border-radius:8px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:600}
+    .btn.fill{background:var(--accent);color:var(--bg)}
+    section{padding:3rem 0;border-top:1px solid var(--line)}
+    h2{font-size:1.9rem;margin:0 0 1.5rem;letter-spacing:-.02em}
+    .about p{max-width:66ch;margin:0 0 1rem}
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+    .skills div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+    .skills h3{margin:0 0 .5rem;font-size:1rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+    .chips li{background:var(--accent-soft);padding:.15rem .6rem;border-radius:6px;font-size:.88rem}
+    /* Timeline */
+    .id{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.2rem}
+    .id h1{margin:0 0 .4rem}
+    .id .role{margin:0}
+    .photo{position:relative;width:clamp(96px,22vw,140px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:4px solid var(--accent);background:var(--accent-soft);display:grid;place-items:center;font-weight:800;font-size:2rem;color:var(--accent);flex:none}
+    .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .tl{position:relative;--lx:50%}
+    .tl::before{content:"";position:absolute;left:var(--lx);top:0;bottom:0;width:3px;transform:translateX(-50%);background:var(--line);border-radius:3px}
+    .tl ol{margin:0;padding:0;list-style:none}
+    .tl .trail{position:absolute;left:var(--lx);top:0;width:4px;height:0;transform:translateX(-50%);background:var(--accent);border-radius:4px;z-index:1}
+    .tl .car{position:absolute;left:var(--lx);top:0;width:28px;height:44px;transform:translate(-50%,-50%);z-index:3;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+    .tl li{position:relative;width:50%;padding:0 2.4rem 2rem 0;text-align:right}
+    .tl li:nth-child(even){margin-left:50%;padding:0 0 2rem 2.4rem;text-align:left}
+    .tl li::before{content:"";position:absolute;top:.35rem;right:-.6rem;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--bg);border:3px solid var(--accent);z-index:2}
+    .tl li:nth-child(even)::before{right:auto;left:-.6rem}
+    .tl li.passed::before{background:var(--accent)}
+    @media (max-width:700px){.tl{--lx:14px}.tl li,.tl li:nth-child(even){width:auto;margin-left:0;padding:0 0 2rem 2.6rem;text-align:left}.tl li::before,.tl li:nth-child(even)::before{right:auto;left:calc(14px - .6rem)}}
+    .tl li.now::before{border-color:var(--now);background:var(--now)}
+    .tl .date{font-weight:700;color:var(--accent);font-size:.92rem}
+    .tl li.now .date{color:var(--now)}
+    .tl .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.15rem;margin-top:.35rem}
+    .tl h3{margin:0 0 .25rem;font-size:1.15rem}
+    .tl p{margin:0;color:var(--muted)}
+    .tag{display:inline-block;margin-left:.4rem;font-size:.78rem;background:var(--now-soft);color:var(--now);padding:.05rem .5rem;border-radius:99px;font-weight:700;vertical-align:middle}
+    .proj{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem;margin:0 0 1.4rem}
+    .proj h3{margin:0 0 .3rem;font-size:1.3rem}
+    .proj .stack{color:var(--muted);font-size:.9rem;margin:0 0 .8rem}
+    .proj ul{margin:0 0 .5rem;padding-left:1.2rem}
+    .proj li{margin:0 0 .45rem}
+    .lang{display:grid;gap:1rem;max-width:520px}
+    .lang .row{display:grid;grid-template-columns:130px 1fr 80px;gap:.8rem;align-items:center}
+    .bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+    .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+    .lang span.lv{color:var(--muted);font-size:.9rem;text-align:right}
+    .edu p,.certs li{margin:0 0 .4rem}
+    .certs{padding-left:1.2rem;margin:1.2rem 0 0}
+    .contact p{max-width:56ch;color:var(--muted)}
+    .mail{font-size:clamp(1.2rem,4vw,1.7rem);font-weight:700;word-break:break-all}
+    footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+    @media (max-width:520px){.lang .row{grid-template-columns:1fr;gap:.3rem}.lang span.lv{text-align:left}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <b>Aryan Ingle</b>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="id">
+      <!-- ✏️ PHOTO: save your photo as photo.jpg in the same folder as index.html -->
+      <div class="photo"><span>AI</span><img src="src/assets/Aryan_Ingle_PHOTO.JPG" alt="Aryan Ingle" onerror="this.remove()"></div>
+      <div><h1>Aryan Ingle</h1>
+        <p class="role">Java Backend Developer</p></div>
+    </div>
+    <p class="lead">I build secure REST APIs with Spring Boot and deploy them with Docker on AWS. Looking for a Software Engineer Intern or full-time role.</p>
+    <ul class="badges">
+      <li class="ok">Open to work</li><li class="ok">Immediate joiner</li>
+      <li>Remote, Hybrid, On-site</li><li>Hyderabad, Pune, Mumbai, Bengaluru</li>
+    </ul>
+    <div class="cta">
+      <!-- ✏️ FILL: your links are set once in the CONFIG block at the bottom of this file -->
+      <a class="btn fill" data-link="mailto" href="#contact">Email me</a>
+      <a class="btn" data-link="github" href="#">GitHub</a>
+      <a class="btn" data-link="linkedin" href="#">LinkedIn</a>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I’m a B.Tech IT graduate (Vishwakarma Institute of Information Technology, 2025) focused on Java backend development: Spring Boot, Spring Security with JWT, Hibernate and PostgreSQL.</p>
+    <p>Since graduating, I’ve spent my time building the skills and projects employers ask for: a Java Full Stack course, a Spring Boot and Microservices course, and two projects. The first is the AI Support Ticket Triage System. The second, StudyHall, is a web application I’m building for a potential client; the client isn’t finalised yet. It’s in development, and I expect to complete it by Dec 2026.</p>
+  </section>
+
+  <section id="journey">
+    <h2>My journey since graduation</h2>
+    <div class="tl" id="tl"><i class="trail" aria-hidden="true"></i><svg class="car" aria-hidden="true" viewBox="0 0 28 44"><rect x="1" y="9" width="4" height="10" rx="1.5" fill="#222"/><rect x="23" y="9" width="4" height="10" rx="1.5" fill="#222"/><rect x="1" y="27" width="4" height="10" rx="1.5" fill="#222"/><rect x="23" y="27" width="4" height="10" rx="1.5" fill="#222"/><rect x="4" y="2" width="20" height="40" rx="9" style="fill:var(--now)"/><rect x="7" y="25" width="14" height="8" rx="3" fill="#cfe9ff"/><rect x="8" y="9" width="12" height="6" rx="2" fill="#9fc6e6"/><circle cx="9" cy="40" r="1.6" fill="#ffe27a"/><circle cx="19" cy="40" r="1.6" fill="#ffe27a"/></svg><ol>
+      <li><span class="date">Jun 2025</span><div class="card"><h3>Graduated, B.Tech in Information Technology</h3><p>Vishwakarma Institute of Information Technology, Pune.</p></div></li>
+      <li><span class="date">Jul 2025</span><div class="card"><h3>Personality Development Camp</h3><p>Training led by Col. Rajeev Bharwan, covering discipline, communication and leadership.</p></div></li>
+      <li><span class="date">Dec 2025 – Nov 2026</span><div class="card"><h3>Java Full Stack Development <span class="tag">In progress</span></h3><p>NareshIT, Hyderabad. Core and Advanced Java, JDBC, Servlets, Hibernate, Spring, React.js.</p></div></li>
+      <li><span class="date">20 May – 02 Oct 2026</span><div class="card"><h3>Spring Boot and Microservices</h3><p>AshokIT, Hyderabad. Completed.</p></div></li>
+      <li class="now"><span class="date">01 Oct – 30 Dec 2026</span><div class="card"><h3>AI Support Ticket Triage System <span class="tag">Building now</span></h3><p>A Spring Boot backend that triages support tickets with AI, deployed on AWS. <a href="#projects">See details</a></p></div></li>
+      <li class="now"><span class="date">Now – Dec 2026</span><div class="card"><h3>StudyHall Web Application <span class="tag">Potential client project</span></h3><p>Developing a web application for a potential client. Launch expected Dec 2026.</p></div></li>
+    </ol></div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <article class="proj">
+      <h3>AI Support Ticket Triage System</h3>
+      <p class="stack">Spring Boot, React.js, JWT, BCrypt, PostgreSQL, Docker, AWS EC2, RDS, Postman, JUnit 5</p>
+      <ul>
+        <li>Built a Spring Boot REST API with <b>12 endpoints</b>, 5+ request/response structures, 2 enumerations, 8 service classes and <b>4 status transitions</b> (OPEN → TRIAGED → RESPONDED → CLOSED), plus pagination and status/priority filtering.</li>
+        <li>Secured <b>9 of 12 endpoints</b> with JWT and Spring Security, with BCrypt password hashing, user-specific ticket access and a separate admin API.</li>
+        <li>Added AI triage that generates <b>6 outputs</b> per ticket (category, priority, tags, sentiment, summary, suggested response), with 2 APIs to save results and submit final resolutions.</li>
+        <li>Deployed with Docker on <b>AWS EC2</b> with a private Amazon RDS PostgreSQL database, reachable only from the backend through EC2 security groups. The React/Nginx frontend container is the next step toward a 3-tier setup.</li>
+        <li>Tested all 12 endpoints with Postman and wrote 6 JUnit 5 tests using MockMvc and Mockito.</li>
+      </ul>
+      <div class="cta"><a class="btn" data-link="project1" href="#">View code</a></div>
+    </article>
+    <article class="proj">
+      <h3>StudyHall Web Application <span class="tag">Potential client project</span></h3>
+      <p class="stack">Add the tech stack here</p>
+      <ul><li><b>Status:</b> In development, launch expected Dec 2026.</li><li>Add 2 or 3 points about what you are building (features, your role, tools).</li></ul>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><ul class="chips"><li>Java 8/17/21</li><li>JavaScript</li><li>React.js</li><li>SQL</li></ul></div>
+      <div><h3>Java and backend</h3><ul class="chips"><li>Spring Boot</li><li>Spring MVC</li><li>Spring Data JPA</li><li>Spring Security</li><li>JWT</li><li>REST APIs</li><li>Hibernate</li><li>JDBC</li><li>Servlets</li></ul></div>
+      <div><h3>Database</h3><ul class="chips"><li>MySQL</li></ul></div>
+      <div><h3>Cloud and DevOps</h3><ul class="chips"><li>AWS EC2</li><li>RDS</li><li>IAM</li><li>S3</li><li>Docker</li><li>Nginx</li><li>Maven</li></ul></div>
+      <div><h3>Testing and tools</h3><ul class="chips"><li>Postman</li><li>JUnit 5</li><li>Swagger</li><li>Git</li><li>GitHub</li></ul></div>
+      <div><h3>AI</h3><ul class="chips"><li>Prompt Engineering</li><li>AI-assisted development</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education" class="edu">
+    <h2>Education and certifications</h2>
+    <p><b>Bachelor of Technology in Information Technology</b><br>Vishwakarma Institute of Information Technology, Pune. Nov 2021 – Jun 2025.</p>
+    <ul class="certs">
+      <li><b>AWS Academy Graduate</b>, AWS Academy Cloud Foundations (27 Apr 2024)</li>
+      <li><b>Spring Boot and Microservices</b>, AshokIT (20 May – 02 Oct 2026)</li>
+      <li><b>Java Full Stack Development</b>, NareshIT (Dec 2025 – Nov 2026)</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Profile language: English</h2>
+    <div class="lang">
+      <div class="row"><span>Written</span><div class="bar" role="img" aria-label="Written: Fluent"><i style="width:100%"></i></div><span class="lv">Fluent</span></div>
+      <div class="row"><span>Reading</span><div class="bar" role="img" aria-label="Reading: Fluent"><i style="width:100%"></i></div><span class="lv">Fluent</span></div>
+      <div class="row"><span>Communication</span><div class="bar" role="img" aria-label="Communication: Fluent"><i style="width:100%"></i></div><span class="lv">Fluent</span></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let’s talk</h2>
+    <p>I’m available to join immediately for Software Engineer Intern and full-time roles. The fastest way to reach me is email.</p>
+    <p class="mail"><a data-link="mailto-text" href="#">your.email@example.com</a></p>
+    <div class="cta"><a class="btn" data-link="linkedin" href="#">LinkedIn</a><a class="btn" data-link="github" href="#">GitHub</a></div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Aryan Ingle</div></footer>
+
+<script>
+  /* ✏️ CONFIG: FILL THESE 3 LINES YOURSELF (and optionally project1) */
+  var CONFIG = {
+    email:    "aryaningle1234.i@gmail.com",              // ✏️ your email
+    github:   "https://github.com/ConnectMyCode",    // ✏️ your GitHub profile URL
+    linkedin: "https://www.linkedin.com/in/aryan-ingle-4a0638229/", // ✏️ your LinkedIn URL
+    project1: "https://github.com/ConnectMyCode/Ai-Ticket-Triage"    // ✏️ AI Ticket Triage repo URL
+  };
+  document.querySelectorAll("[data-link]").forEach(function(a){
+    var k=a.getAttribute("data-link");
+    if(k==="mailto"){a.href="mailto:"+CONFIG.email;}
+    else if(k==="mailto-text"){a.href="mailto:"+CONFIG.email;a.textContent=CONFIG.email;}
+    else{a.href=CONFIG[k];a.target="_blank";a.rel="noopener";}
+  });
+  document.getElementById("yr").textContent=new Date().getFullYear();
+  (function(){var tl=document.getElementById("tl"),car=tl.querySelector(".car"),trail=tl.querySelector(".trail"),items=tl.querySelectorAll("li");
+    function upd(){var r=tl.getBoundingClientRect(),vh=window.innerHeight,p=Math.max(0,Math.min(r.height,vh*0.55-r.top));
+      car.style.top=p+"px";trail.style.height=p+"px";
+      items.forEach(function(li){li.classList.toggle("passed",li.offsetTop+10<=p);});}
+    addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();})();
+</script>
+</body>
+</html>
